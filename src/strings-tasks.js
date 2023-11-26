@@ -260,10 +260,9 @@ function endsWith(str, substr) {
  *   formatTime(0, 0) => "00:00"
  */
 function formatTime(minutes, seconds) {
-  if (seconds.length < 10) {
-    return `0${minutes}:0${seconds}`;
-  }
-  return `0${minutes}:${seconds}`;
+  return `${(minutes / 100).toFixed(2).slice(-2)}:${(seconds / 100)
+    .toFixed(2)
+    .slice(-2)}`;
 }
 
 /**
